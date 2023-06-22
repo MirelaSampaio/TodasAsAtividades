@@ -1,0 +1,41 @@
+string criador = "Conrado";
+string cocriador = "Pedrita";
+
+int idadecriador = 15;
+int idadeco = 19;
+
+bool falso = false;
+bool verdadeiro = true;
+
+int cafecriador = 187;
+int cafeco = 5;
+
+int somacafe = 187 + 5 ;
+
+int faltacriador = 200 - 187 ;
+int faltaco = 200 - 5 ;
+
+
+
+Console.WriteLine ("Aula 01 - Atividade com variáveis \n \n \n");
+Console.WriteLine ("Olá!");
+Console.WriteLine ("Bem-Vindo ao sistema de usuários do Conradito");
+Console.WriteLine ("Abaixo estão as informações dos usuários cadastrados no nosso sistema: \n \n");
+Console.WriteLine ("----- Lista de usuários:");
+Console.WriteLine ($"1 - Nome: {criador}, idade: {idadecriador}. É cliente: {falso}");
+Console.WriteLine ($"2 - Nome: {cocriador}, idade:{idadeco}. É cliente: {verdadeiro}");
+Console.WriteLine ("\n \n");
+Console.WriteLine ("----- Quantidade de cafés");
+Console.WriteLine ($"O cliente {criador} já tomou {cafecriador} cafés!");
+Console.WriteLine ($"O cliente {cocriador} já tomou {cafeco} cafés!");
+Console.WriteLine ("\n \n");
+Console.WriteLine ("----- Soma de cafés tomados");
+Console.WriteLine ($"Juntos, os clientes {criador} e {cocriador} tomaram {somacafe} cafés!");
+Console.WriteLine ("\n \n");
+Console.WriteLine ("----- Quantos cafés faltam para chegar em 200?");
+Console.WriteLine ($"Faltam {faltacriador} para {criador}");
+Console.WriteLine ($"Faltam {faltaco} para {cocriador}");
+Console.WriteLine ("\n \n \n");
+Console.WriteLine ("----- Fim do sistema de consultas");
+Console.WriteLine ("- Obrigado, e volte sempre!");
+Console.ReadKey();
