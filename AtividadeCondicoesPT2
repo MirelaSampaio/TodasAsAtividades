@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AulaCondicoesPT2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string mes_de_escolha;
+            int data;
+            string periodo;
+
+
+
+            Console.WriteLine("Olá! Seja bem-vindo a Falcao Vôos e Turismo!");
+            Console.WriteLine("Para começarmos a nossa jornada, escolha um dos meses disponíveis para comprar a sua passagem.");
+            Console.WriteLine(" 8 - Agosto \n 9 - Setembro \n 10 - Outubro");
+            mes_de_escolha = Console.ReadLine();
+
+
+            if (mes_de_escolha == "8" || mes_de_escolha == "9" || mes_de_escolha == "10")
+            {
+                Console.WriteLine($"Perfeito! O mês escolhido é {mes_de_escolha}. \n Aperte uma tecla para prosseguir.");
+            }
+
+
+            else
+            {
+                Console.WriteLine("Sinto muito, o mês digitado é invalido, tente novamente.");
+                Main(null);
+                return;
+            }
+
+            Console.ReadKey();
+
+
+            Console.WriteLine("Okay, agora escolha a data de sua viagem.");
+            Console.WriteLine("Temos passagens disponíveis do dia 6 ao dia 21. Digite o dia desejado:");
+            data = int.Parse(Console.ReadLine());
+
+
+            if (data < 6 && data > 21)
+            {
+                Console.WriteLine("O dia escolhido é invalido, tente novamente.");
+                Main(null);
+                return;
+            }
+
+
+            else
+            {
+                Console.WriteLine($"Sua viagem será dia {data}. Aperte uma tecla para continuar.");
+            }
+
+
+
+            Console.ReadKey();
+
+            Console.WriteLine("Para finalizarmos a sua compra, escolha o período da sua viagem.");
+            Console.WriteLine("Os períodos disponíveis são: \n Manhã \n Tarde \n Noite \n Escreva qual o período desejado abaixo:");
+            periodo = Console.ReadLine();
+
+
+            if (periodo == "Manhã" || periodo == "Tarde" || periodo == "Noite")
+            {
+                Console.WriteLine("Parabéns! A sua passagem foi comprada com sucesso! Abaixo está o recibo da sua compra com todas as informações inseridas aqui.");
+                Console.WriteLine($"Sua passagem está agendada para o mês \n {mes_de_escolha}.");
+                Console.WriteLine($"Para o dia: \n {data}.");
+                Console.WriteLine($"No período da: \n {periodo}. \n \n \n ");
+                Console.WriteLine("-----Muito obrigado por confiar na Falcão, e sempre que desejar voar rumo aos seus sonhos, volte novamente! :) -----");
+            }
+
+
+            else
+            {
+                Console.WriteLine("Hmm que pena.. Parece que o período digitado é invalido, tente novamente.");
+                Main(null);
+                return;
+            }
+
+
+            Console.ReadKey();
+
+        }
+    }
+}
