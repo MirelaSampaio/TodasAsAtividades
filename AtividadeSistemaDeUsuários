@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AtividadeAula08
+{
+    class Program
+    {
+       
+           static List<string> nomes = new List <string>();
+           static int posicao = 0;
+
+        static void Main(string[] args)
+        {
+
+            int contador = 0;
+            double opcao;
+            
+
+            Console.WriteLine("Olá, bem-vindo ao sistema de usuários da Misa.\n Digite a opção desejada:");
+            Console.WriteLine("1 - Cadastrar");
+            Console.WriteLine("2 - Buscar");
+            Console.WriteLine("3 - Deletar");
+           
+
+            opcao = double.Parse(Console.ReadLine());
+
+            if (opcao == 1)
+            {
+                Console.WriteLine("Digite o nome do novo usuário:");
+                nomes.Add(Console.ReadLine());
+                Console.WriteLine("Usuário adicionado com sucesso!");
+                Console.ReadKey();
+                
+            }
+            int quantidade = nomes.Count;
+            
+            if (opcao == 2)
+            {
+                if (quantidade < 0)
+                {
+                    Console.WriteLine("Não há nada na lista ainda.");
+                    Main(null);
+                    return;
+                }
+
+                while (contador < quantidade)
+                {
+                    Console.WriteLine($"Nome {posicao}: {nomes[contador]}");
+                    contador += 1;
+                    posicao++;
+
+                    
+                    
+
+                }
+               
+
+
+            }
+            if (opcao == 3)
+            {
+                Console.WriteLine("Digite a posição do nome que você deseja deletar.");
+               
+                posicao = int.Parse(Console.ReadLine());
+                nomes.RemoveAt(posicao);
+                Console.WriteLine("Usuário deletado com sucesso!");
+            }
+
+            Console.ReadKey();
+            Main(null);
+            return;
+        }
+    }
+}
