@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AtividadeCondicoesPT1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string nome;
+            string sobrenome;
+            string endereco;
+            string bairro;
+            string cidade;
+            string estado;
+
+            string cupom = "Falcao10";
+            string resposta_promocoes;
+
+            double viagens_passado;
+            double viagens_atuais;
+                
+
+            Console.WriteLine("Seja bem-vindo ao Falcão Viagens e Turismo. :)");
+            Console.WriteLine("Digite por favor o seu primeiro nome:");
+            nome = Console.ReadLine();
+
+            Console.WriteLine("Agora, digite seu sobrenome por favor:");
+            sobrenome = Console.ReadLine();
+
+            Console.WriteLine($"Olá, Sr(a). {nome} {sobrenome}, vamos continuar o seu cadastro.");
+            Console.ReadKey();
+
+
+            Console.WriteLine("Digite seu endereço abaixo:");
+            endereco = Console.ReadLine();
+
+            Console.WriteLine("Agora, digite o nome do seu bairro:");
+            bairro = Console.ReadLine();
+
+
+            Console.WriteLine("Ótimo, e em qual cidade fica localizado?");
+            cidade = Console.ReadLine();
+
+            Console.WriteLine("E essa cidade fica no estado de?");
+            estado = Console.ReadLine();
+
+            Console.WriteLine($"Perfeito! Então o Sr(a) {sobrenome} mora na cidade de {cidade}-{estado}, no endereço {endereco}, localizado no bairro {bairro}.");
+
+            Console.WriteLine("Agora, digite por favor, quantas viagens você fez ao todo no ano passado.");
+            viagens_passado = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Agora, digite quantas viagens você fez esse ano:");
+            viagens_atuais = double.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Ao todo, você realizou {viagens_passado + viagens_atuais}.");
+            Console.WriteLine($"Faltam {viagens_atuais + viagens_passado - 10} para você completar 10 viagens.");
+            Console.WriteLine($"A sua média de viagens é de: {viagens_passado + viagens_atuais /2}");
+            Console.WriteLine($"O intervalo entre as suas viagens é de {viagens_passado + viagens_atuais / 12}");
+
+            Console.WriteLine($"Muito obrigada Sr(a) {nome} {sobrenome}, o seu cadastro foi realizado com sucesso!");
+
+            Console.WriteLine("Para continuarmos, digite seu cupom de desconto:");
+            cupom = Console.ReadLine();
+            if (cupom != "Falcao10")
+            {
+                Console.WriteLine("Sinto muito, o seu cupom é invalido, tente novamente.");
+                Main(null);
+                return;
+            }
+
+            Console.WriteLine("Parabéns, você recebeu 10% de desconto na sua próxima compra.");
+            Console.WriteLine("Você gostaria de receber promoções no seu e-mail? se sim, digite SIM.");
+            resposta_promocoes = Console.ReadLine();
+            if (resposta_promocoes == "SIM")
+            {
+                Console.WriteLine($"Obrigado por se registrar {nome}, você receberá promoções em breve.");
+            }
+            Console.WriteLine("Obrigada e volte sempre.");
+            Console.ReadKey();
+            
+
+        }
+    }
+}
