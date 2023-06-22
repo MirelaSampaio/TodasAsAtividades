@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MaquinaDeCafe
+{
+    class Program
+    {
+        static double operacao;
+        static double dinheiro;
+
+
+        static void Main(string[] args)
+        {
+
+
+
+            Console.WriteLine("Olá, quanto você deseja inserir?");
+            dinheiro = double.Parse(Console.ReadLine());
+
+
+            Console.WriteLine("Perfeito, temos as seguintes opções no cardápio:");
+            Console.WriteLine("1 - Café expresso - R$ 3,00 ");
+            Console.WriteLine("2 - Capuccino - R$ 4,50 ");
+            Console.WriteLine("3 - Mocaccino - R$ 6,00 ");
+            Console.WriteLine("4 - Água quente - R$ 1,00 ");
+
+            Console.WriteLine("Digite o número da operação desejada:");
+            operacao = double.Parse(Console.ReadLine());
+            if (operacao > 4 || operacao < 1)
+            {
+                Console.WriteLine("Número invalido, digite novamente.");
+                Main(null);
+                return;
+            }
+
+
+            if (operacao == 1 && dinheiro >= 3) // café
+            {
+                Console.WriteLine("Você escolheu a opção de café, ele está sendo preparado.");
+            }
+            if (operacao == 2 && dinheiro >= 4.50) // capuccino
+            {
+                Console.WriteLine("Você escolheu a opção de capuccino, ele está sendo preparado.");
+            }
+            if (operacao == 3 && dinheiro >= 6) // moccacino
+            {
+                Console.WriteLine("Você escolheu a opção de mocaccino, ele está sendo preparado.");
+            }
+            if (operacao == 4 && dinheiro >= 1) // agua
+            {
+                Console.WriteLine("Você escolheu a opção de água quente, ele está sendo preparado.");
+            }
+
+            Console.WriteLine("Obrigado, e volte sempre. :)");
+            Console.ReadKey();
+
+        }
+    }
+}
