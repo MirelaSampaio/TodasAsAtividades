@@ -1,0 +1,48 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+		
+		string funcionario;
+string produto_um;
+string produto_dois;
+
+int quantidade_produtoum;
+int quantidade_produtodois;
+
+Console.WriteLine("Bem-vindo ao sistema de estoque do Conradito");
+Console.WriteLine("Digite o nome do funcionário responsável:");
+funcionario = Console.ReadLine();
+
+
+Console.WriteLine($"\n \n O cadastro de estoque será feito no nome de {funcionario} \n \n");
+
+
+Console.WriteLine("-- CADASTRO DE PRODUTOS");
+Console.WriteLine("Digite o nome do Produto 1:");
+produto_um = Console.ReadLine();
+Console.WriteLine($"Digite a quantidade em estoque de {produto_um}");
+quantidade_produtoum = int.Parse( Console.ReadLine() );
+Console.WriteLine("Digite o nome do Produto 2:");
+produto_dois = Console.ReadLine();
+Console.WriteLine($"Digite a quantidade em estoque de {produto_dois}");
+quantidade_produtodois = int.Parse( Console.ReadLine() );
+
+Console.WriteLine("\n- Os produtos foram cadastrados com sucesso! \n");
+
+
+Console.WriteLine($"-- LISTA DE PRODUTOS CADASTRADOS POR {funcionario}:");
+Console.WriteLine($"- {produto_um} contém {quantidade_produtoum} itens em estoque");
+Console.WriteLine($"- {produto_dois} contém {quantidade_produtodois} itens em estoque");
+Console.WriteLine($"- Total de itens no estoque: {quantidade_produtoum + quantidade_produtodois} \n");
+Console.WriteLine("----- FIM DO SISTEMA -----");
+
+Console.ReadKey();
+
+		
+		
+	}
+}
