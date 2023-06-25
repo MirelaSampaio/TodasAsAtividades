@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace JoguinhoDaAmizade
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int pontos = 0;
+
+
+            Console.WriteLine("Bem-Vindo ao jogo da amizade :)");
+            Console.WriteLine("Para começar aperte uma tecla:");
+            Console.ReadKey();
+            Console.WriteLine("Perfeito! O jogo funciona da seguinte maneira: ");
+            Console.WriteLine("Você começa com um valor aleatório, e pode decidir se quer aumentar" +
+                " esse número com outro valor aleatório ou encerrar o jogo ali mesmo, digitando SIM ou NÃO, o seu objetivo é chegar ao número 21," +
+                " ou o mais próximo dele, PORÉM, existem duas condições: \n \n \n");
+            Console.WriteLine(" 1 - O valor SEMPRE será entre 1 a 10. \n");
+            Console.WriteLine(" 2 - Se você ultrapassar o número 21, você perde. \n");
+            Console.WriteLine("Agora que você já sabe como funciona o jogo, vamos começar, aperte uma tecla.");
+            Console.ReadKey();
+            while (true)
+            {
+
+                Console.WriteLine($"Você tem {pontos} pontos.");
+                Console.WriteLine("Digite 1 para continuar ou 2 para encerrar.");
+                int resposta = int.Parse(Console.ReadLine());
+
+                if (resposta == 2)
+                {
+                    Console.WriteLine("FIM DO JOGO.");
+                    break;
+
+                }
+                Random sorteador = new Random();
+                int numero = sorteador.Next(1,11);
+                Console.WriteLine($"Você tirou o número {numero}");
+
+                pontos += numero;
+
+                if (pontos > 21) 
+                {
+                    Console.WriteLine($"Seu resultado final foi: {pontos}. Poxa que pena :( Parece que você estourou o objetivo e perdeu. \n \nFIM DE JOGO.");
+                    break;
+                }
+                if (pontos == 21) 
+                {
+                    Console.WriteLine($"Seu resultado final foi: {pontos}. Parabéns, você alcancou o objetivo final e ganhou o Jogo da Amizade :) \n \nFIM DE JOGO.");
+                    break;
+
+                }
+
+            }
+                         
+            Console.ReadKey();
+        }
+    }
+}
